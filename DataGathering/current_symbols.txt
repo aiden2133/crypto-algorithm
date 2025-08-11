@@ -1,0 +1,25 @@
+The stock symbols using:
+symbols = ["AVGO", "CRM", "COST", "JPM", "META", "BTI", "WM", "NVDA", "NFLX", "TSLA",
+           "AAPL", "GOOGL", "AMZN", "MSFT", "LMT", "XOM", "BRK-B", "PLTR", "JNJ", "GS",
+           "WMT", "ENB", "DUK", "CRWD", "AMD", "QCOM", "ED", "ALB", "HD", "T"]
+    --> Little caveat, BRK-B is used as BRK.B
+
+Right now I can get 15 minute delay from current. I am planning on running two programs. One that updates crypto
+currencies constantly, and another that updates the stocks I have picked out after 15 minutes from the start of opening
+on trading days then every minute until 15 minutes after trading.
+
+The crypto symbols using:
+symbols = ['BTC/USD','ETH/USD','XRP/USD','USDT/USD','SOL/USD','DOGE/USD','USDC/USD',
+           'AVAX/USD','DOT/USD','LINK/USD','LTC/USD','SHIB/USD','BCH/USD','UNI/USD',
+           'GRT/USD','AAVE/USD','SUSHI/USD','XTZ/USD','MKR/USD','BAT/USD','CRV/USD','YFI/USD']
+
+Right now I am getting about a 1 minute delay from what is current. So every minute pull from the data base.
+
+Run it using the .venv
+source /Users/aidenankrum/Desktop/aiden2133-project_io/.venv/bin/activate
+
+Run with long running background service
+nohup python3 /Users/aidenankrum/Desktop/aiden2133-project_io/DataGathering/crypto_updater.py > ~/Desktop/crypto.log 2>&1 &
+nohup python3 /Users/aidenankrum/Desktop/aiden2133-project_io/DataGathering/stock_updater.py > ~/Desktop/stock.log 2>&1 &
+
+To check if running
